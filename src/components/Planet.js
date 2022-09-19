@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from "three";
 import { Text } from '@react-three/drei';
@@ -11,7 +11,7 @@ const Planet = (props) => {
     // This reference gives us direct access to the THREE.Mesh object
     const ref = useRef()
     // Hold state for hovered and clicked events
-    const [hovered, hover] = useState(false)
+    // const [hovered, hover] = useState(false)
     // Subscribe this component to the render-loop, rotate the mesh every frame
     let t = 0;
     useFrame((state, delta) => {
@@ -27,8 +27,9 @@ const Planet = (props) => {
         <mesh
             {...props}
             ref={ref}
-            onPointerOver={(event) => hover(true)}
-            onPointerOut={(event) => hover(false)}>
+        // onPointerOver={(event) => hover(true)}
+        // onPointerOut={(event) => hover(false)}
+        >
             <sphereGeometry attach='geometry' />
             <meshLambertMaterial color={props.color} map={texture} />
             {props.name === 'Saturn' ? <Ring texture={true} position={props.position} scale={[5, 5, 5]} attributes={[0.25, 0.35, 128]} /> : ''}
