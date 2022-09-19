@@ -10,7 +10,7 @@ function App() {
 
   return (
     <div>
-      <Canvas camera={{ position: [100, 250, 350], fov: 50 }}
+      <Canvas camera={{ position: [100, 250, 300], fov: 40 }}
         style={{
           backgroundColor: '#110626',
           width: '100%',
